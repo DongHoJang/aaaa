@@ -137,6 +137,8 @@ MESSAGE_LEVEL = messages_constants.DEBUG
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, 'aaaa', 'static'),
- ]
+STATICFILES_DIRS = []
+
+PROJECT_STATIC_ROOT = os.path.join(BASE_DIR, 'aaaa', 'static')
+if glob(os.path.join(PROJECT_STATIC_ROOT, '*')):
+    STATICFILES_DIRS.append(PROJECT_STATIC_ROOT)  # 파일이 있는 STATIC 경로만 추가
