@@ -1,0 +1,5 @@
+EMAIL_HOST = 'smtp.naver.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '61hade@naver.com'
+EMAIL_HOST_PASSWORD = '24w56e8g4601'
+EMAIL_USE_TLS = True

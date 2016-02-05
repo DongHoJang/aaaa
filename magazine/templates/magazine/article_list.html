@@ -1,0 +1,33 @@
+{% extends "magazine/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Article List</h2>
+
+            <table class="table table-hover table-bordered">
+                <tbody>
+                    {% for article in article_list %}
+                    <tr>
+                        <td>
+                            <a href="{% url "magazine:article_detail" article.pk %}">
+                                {{ article.title }}
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td>등록된 Article이 없습니다.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{% url "magazine:article_new" %}" class="btn btn-primary">
+                New Article
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
