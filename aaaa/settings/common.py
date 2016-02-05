@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 from os.path import abspath, dirname
+from glob import glob
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = dirname(dirname(dirname(abspath(__file__))))
@@ -136,3 +137,6 @@ MESSAGE_LEVEL = messages_constants.DEBUG
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'aaaa', 'static'),
+ ]
